@@ -15,13 +15,19 @@ You can also run the program from an IDE like Visual Studio Code. Start your IDE
 ## Project Structure
 ---
 The project files and folders are organized as follows:
-
-### (to complete)<--
+```
+root                         (project root folder)
++-- Greed                    (source code for game)
+  +-- Game                   (specific games files)
+  +-- __main.py__.py         (entry point for program)
++-- ReadME.md                (genral info)
+```
 
 
 ## Required Technologies
 ---
 * Python 3.8.0
+* Raylib Python CFFI 3.7
 
 ## Authors
 ---
