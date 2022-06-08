@@ -1,4 +1,6 @@
-from random import random, randrange
+from random import random, randrange, randint
+import random
+from shared.point import Point
 class GreedGame:
     """A person who directs the game. 
     
@@ -20,7 +22,6 @@ class GreedGame:
         self._video_service = video_service
         self._INIT_SCORE = 600
         self._TOTAL_SCORE = self._INIT_SCORE
-        self.__count = 0
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -46,8 +47,6 @@ class GreedGame:
         robot.set_velocity(velocity)        
 
     def _do_updates(self, cast):
-        self.__count += 1
-        print('Updating...', self.__count)
         """Updates the robot's position and resolves any collisions with artifacts.
         
         Args:
@@ -62,9 +61,14 @@ class GreedGame:
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
-        
+
+        x1 = 0
+        y1 = 1
+        position1 = Point(x1, y1)
+                
         for rock in rocks:
-            # rock.set_velocity(velocity)
+            rock.set_velocity(position1)
+            rock.move_next(max_x,max_y)
             if robot.get_position().equals(rock.get_position()):
                 score = rock.get_score()
                 self._TOTAL_SCORE += score
@@ -72,16 +76,18 @@ class GreedGame:
                 cast.remove_actor("rocks", rock)
                 break
             # sum = 1
-            rock.move_next(randrange(1, 901) ,randrange(1, 601))
+
 
         for gem in gems:
+            gem.set_velocity(position1)
+            gem.move_next(max_x,max_y)
             if robot.get_position().equals(gem.get_position()):
                 score = gem.get_score()
                 self._TOTAL_SCORE += score
                 banner.set_text(f"Score : {self._TOTAL_SCORE}")
                 cast.remove_actor("gems", gem)
                 break
-            gem.move_next(randrange(1, 901) ,randrange(1, 601))   
+            #gem.move_next(randrange(1, 901) ,randrange(1, 601))   
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
