@@ -16,11 +16,13 @@ You can also run the program from an IDE like Visual Studio Code. Start your IDE
 ---
 The project files and folders are organized as follows:
 ```
-root                         (project root folder)
-+-- Greed                    (source code for game)
-  +-- Game                   (specific games files)
-  +-- __main.py__.py         (entry point for program)
-+-- ReadME.md                (genral info)
+root                        (project root folder)
++-- casting                 (source code for game)
++-- directing               (source code for game)
++-- service                 (source code for game)
++-- shared                  (source code for game)
++-- __main__.py             (entry point for program)
++-- README.md               (genral info)
 ```
 
 

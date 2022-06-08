@@ -1,4 +1,3 @@
-import os
 import random
 
 from casting.actor import Actor
@@ -12,6 +11,7 @@ from service.video_service import VideoService
 
 from shared.color import Color
 from shared.point import Point
+
 
 
 FRAME_RATE = 12
