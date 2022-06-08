@@ -13,6 +13,7 @@ from shared.color import Color
 from shared.point import Point
 
 
+
 FRAME_RATE = 12
 MAX_X = 900
 MAX_Y = 600
