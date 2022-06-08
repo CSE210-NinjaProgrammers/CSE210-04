@@ -1,6 +1,6 @@
-from random import random, randrange, randint
-import random
 from shared.point import Point
+
+
 class GreedGame:
     """A person who directs the game. 
     
@@ -62,12 +62,13 @@ class GreedGame:
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
 
+        # This Point represents the velocity of the elements
         x1 = 0
-        y1 = 1
-        position1 = Point(x1, y1)
+        y1 = 2
+        velocity = Point(x1, y1)
                 
         for rock in rocks:
-            rock.set_velocity(position1)
+            rock.set_velocity(velocity)
             rock.move_next(max_x,max_y)
             if robot.get_position().equals(rock.get_position()):
                 score = rock.get_score()
@@ -75,11 +76,10 @@ class GreedGame:
                 banner.set_text(f"Score : {self._TOTAL_SCORE}")
                 cast.remove_actor("rocks", rock)
                 break
-            # sum = 1
 
 
         for gem in gems:
-            gem.set_velocity(position1)
+            gem.set_velocity(velocity)
             gem.move_next(max_x,max_y)
             if robot.get_position().equals(gem.get_position()):
                 score = gem.get_score()
@@ -87,7 +87,7 @@ class GreedGame:
                 banner.set_text(f"Score : {self._TOTAL_SCORE}")
                 cast.remove_actor("gems", gem)
                 break
-            #gem.move_next(randrange(1, 901) ,randrange(1, 601))   
+
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.

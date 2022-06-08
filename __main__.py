@@ -53,7 +53,7 @@ def main():
     cast.add_actor("robots", robot)
     
     # create the artifacts
-    for n in range(DEFAULT_ROCKS):
+    for _ in range(DEFAULT_ROCKS):
         
         score = -1
         x = random.randint(1, COLS - 1)
@@ -74,7 +74,7 @@ def main():
         rocks.set_score(score)
         cast.add_actor("rocks", rocks)
     
-    for m in range(DEFAULT_GEMS):
+    for _ in range(DEFAULT_GEMS):
         
         score = 1
         x = random.randint(1, COLS - 1)
