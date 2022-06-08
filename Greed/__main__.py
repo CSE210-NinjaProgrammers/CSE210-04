@@ -23,8 +23,8 @@ COLS = 60
 ROWS = 40
 CAPTION = "Greed Game"
 WHITE = Color(255, 255, 255)
-DEFAULT_ROCKS = 20
-DEFAULT_GEMS = 20
+DEFAULT_ROCKS = 80
+DEFAULT_GEMS = 80
 
 
 def main():
@@ -71,7 +71,6 @@ def main():
         rocks.set_font_size(FONT_SIZE)
         rocks.set_color(color)
         rocks.set_position(position)
-        rocks.set_velocity(position)
         rocks.set_score(score)
         cast.add_actor("rocks", rocks)
     
@@ -92,8 +91,7 @@ def main():
         gems.set_text("*")
         gems.set_font_size(FONT_SIZE)
         gems.set_color(color)
-        gems.set_position(position)
-        gems.set_velocity(position)
+        gems.set_position(position)      
         gems.set_score(score)
         cast.add_actor("gems", gems)
     
