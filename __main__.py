@@ -67,7 +67,7 @@ def main():
         color = Color(r, g, b)
         
         rocks = Artifact()
-        rocks.set_text("*")
+        rocks.set_text("O")
         rocks.set_font_size(FONT_SIZE)
         rocks.set_color(color)
         rocks.set_position(position)
@@ -88,7 +88,7 @@ def main():
         color = Color(r, g, b)
         
         gems = Artifact()
-        gems.set_text("🔲")
+        gems.set_text("*")
         gems.set_font_size(FONT_SIZE)
         gems.set_color(color)
         gems.set_position(position)      
