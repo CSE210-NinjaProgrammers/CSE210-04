@@ -18,7 +18,7 @@ FRAME_RATE = 12
 MAX_X = 900
 MAX_Y = 600
 CELL_SIZE = 15
-FONT_SIZE = 17
+FONT_SIZE = 25
 COLS = 60
 ROWS = 40
 CAPTION = "Greed Game"
@@ -42,7 +42,7 @@ def main():
     
     # create the robot
     x = int(MAX_X / 2)
-    y = int(MAX_Y - 15)
+    y = int(MAX_Y - 25)
     position = Point(x, y)
 
     robot = Actor()
@@ -88,7 +88,7 @@ def main():
         color = Color(r, g, b)
         
         gems = Artifact()
-        gems.set_text("🔲")
+        gems.set_text("0")
         gems.set_font_size(FONT_SIZE)
         gems.set_color(color)
         gems.set_position(position)      

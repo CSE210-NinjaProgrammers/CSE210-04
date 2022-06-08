@@ -62,12 +62,12 @@ class GreedGame:
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
 
-        x1 = 0
-        y1 = 1
-        position1 = Point(x1, y1)
+        x_artifact = 0
+        y_artifact = 1
+        position_artifacts = Point(x_artifact, y_artifact)
                 
         for rock in rocks:
-            rock.set_velocity(position1)
+            rock.set_velocity(position_artifacts)
             rock.move_next(max_x,max_y)
             if robot.get_position().equals(rock.get_position()):
                 score = rock.get_score()
@@ -75,11 +75,10 @@ class GreedGame:
                 banner.set_text(f"Score : {self._TOTAL_SCORE}")
                 cast.remove_actor("rocks", rock)
                 break
-            # sum = 1
-
+          
 
         for gem in gems:
-            gem.set_velocity(position1)
+            gem.set_velocity(position_artifacts)
             gem.move_next(max_x,max_y)
             if robot.get_position().equals(gem.get_position()):
                 score = gem.get_score()
@@ -87,7 +86,7 @@ class GreedGame:
                 banner.set_text(f"Score : {self._TOTAL_SCORE}")
                 cast.remove_actor("gems", gem)
                 break
-            #gem.move_next(randrange(1, 901) ,randrange(1, 601))   
+             
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
