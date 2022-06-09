@@ -14,7 +14,7 @@ from shared.point import Point
 
 
 
-FRAME_RATE = 12
+FRAME_RATE = 25
 MAX_X = 900
 MAX_Y = 600
 CELL_SIZE = 15

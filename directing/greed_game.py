@@ -1,4 +1,6 @@
 from shared.point import Point
+import time
+
 
 
 class GreedGame:
@@ -20,8 +22,9 @@ class GreedGame:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
-        self._INIT_SCORE = 600
+        self._INIT_SCORE = 10
         self._TOTAL_SCORE = self._INIT_SCORE
+        self._is_gameover = False
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -34,7 +37,10 @@ class GreedGame:
             self._get_inputs(cast)
             self._do_updates(cast)
             self._do_outputs(cast)
-        self._video_service.close_window()
+        self._is_gameover = True    
+        self._do_updates(cast)
+        self._do_outputs(cast)
+        time.sleep(2)
 
     def _get_inputs(self, cast):
         """Gets directional input from the keyboard and applies it to the robot.
@@ -57,14 +63,17 @@ class GreedGame:
         rocks = cast.get_actors("rocks")
         gems = cast.get_actors("gems")
 
-        banner.set_text(f"Score : {self._TOTAL_SCORE}")
+        if self._is_gameover == True:
+            banner.set_text("Game Over")
+        else:
+            banner.set_text(f"Score : {self._TOTAL_SCORE}")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
 
         # This Point represents the velocity of the elements
         x1 = 0
-        y1 = 2
+        y1 = 1
         velocity = Point(x1, y1)
                 
         for rock in rocks:

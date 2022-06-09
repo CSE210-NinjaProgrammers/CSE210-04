@@ -38,10 +38,3 @@ root                        (project root folder)
 * Livia Pimentel     (livia_macedo89@yahoo.com.br)
 * Alfred Kamisesse   (reeves.kamisese@gmail.com)
 * Juan David Estrada (jdemachado1105@gmail.com)
-
-## Contributes
-Alfred Kamisese ->
-Eric Farley ->
-Livia Pimentel ->  
-Tulio Banegas -> 
-Juan David Estrada -> 
