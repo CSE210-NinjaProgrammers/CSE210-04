@@ -38,3 +38,11 @@ root                        (project root folder)
 * Livia Pimentel     (livia_macedo89@yahoo.com.br)
 * Alfred Kamisesse   (reeves.kamisese@gmail.com)
 * Juan David Estrada (jdemachado1105@gmail.com)
+
+## Contributions
+---
+* Eric Farley        -->  Add the necessary logic to perform the movements of the gems and rocks on the screen.
+* Tulio Banegas      -->  Add artifact class methods and attributes, and the game over phrase when reaching 0 points.
+* Livia Pimentel     -->  Add the logic of adjusting the Font_size so that the actors look bigger and create them.
+* Alfred Kamisesse   -->  Finish up project structure on Readme file and change shape for rocks and gems.  
+* Juan David Estrada -->  Help with the logic in the cycle within the do_updates to visualize the scores.
